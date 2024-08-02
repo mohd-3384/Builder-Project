@@ -140,7 +140,7 @@ function App() {
     toast("Product has been updated successfully!", {
       icon: "👏",
       style: {
-        backgroundColor: "green",
+        backgroundColor: "grey",
         color: "white",
       },
     });
@@ -346,10 +346,15 @@ function App() {
         description="Deleting this product will remove it permanently from your inventory. Any associated data, sales history, and other related information will also be deleted. Please make sure this is the intended action."
       >
         <div className="flex items-center space-x-3">
-          <Button className="bg-[#c2344d] hover:bg-red-800" onClick={removeProductHandler}>
+          <Button
+            className="bg-[#c2344d] hover:bg-red-800"
+            onClick={removeProductHandler}>
             Yes, remove
           </Button>
-          <Button type="button" className="bg-[#f5f5fa] hover:bg-gray-300 !text-black" onClick={closeConfirmModal}>
+          <Button
+            type="button"
+            className="bg-[#f5f5fa] hover:bg-gray-300 !text-black"
+            onClick={closeConfirmModal}>
             Cancel
           </Button>
         </div>
