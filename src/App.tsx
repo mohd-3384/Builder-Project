@@ -214,13 +214,18 @@ function App() {
       key={color}
       color={color}
       onClick={() => {
-        if (tempColors.includes(color)) {
-          settempColors(prev => prev.filter(item => item !== color))
-          return
-        }
-        if (productToEdit.colors.includes(color)) {
-          settempColors(prev => prev.filter(item => item !== color))
-          return
+        // if (tempColors.includes(color)) {
+        //   settempColors(prev => prev.filter(item => item !== color))
+        //   return
+        // }
+        // if (productToEdit.colors.includes(color)) {
+        //   settempColors(prev => prev.filter(item => item !== color))
+        //   return
+        // }
+        if (tempColors.includes(color) || productToEdit.colors?.includes(color)) {
+          settempColors((prev) => prev.filter((item) => item !== color));
+          setproductToEdit((prev) => ({ ...prev, colors: prev.colors.filter((item) => item !== color) }));
+          return;
         }
         settempColors(prev => [...prev, color])
       }
